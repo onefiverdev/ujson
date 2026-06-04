@@ -2,7 +2,7 @@ name = "onefiverdev/ujson"
 version = "1.0.0"
 description = "JSON encoder and decoder"
 authors = ["onefiverdev"]
-repository = "https://github.com/onefiverdev/json"
+repository = "https://github.com/onefiverdev/ujson"
 license = "Apache-2.0"
 includes = [
     "README.md",
