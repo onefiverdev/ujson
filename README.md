@@ -1,4 +1,4 @@
-# JSON encoder/decoder
+# ujson encoder/decoder
 A lightweight JSON encode/decode library written in Luau, compatible with Lune runtime without external dependencies.
 
 ## Features

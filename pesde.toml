@@ -1,4 +1,4 @@
-name = "onefiverdev/json"
+name = "onefiverdev/ujson"
 version = "1.0.0"
 description = "JSON encoder and decoder"
 authors = ["onefiverdev"]
