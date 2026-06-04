@@ -2,8 +2,8 @@
 A lightweight JSON encode/decode library written in Luau, compatible with Lune runtime without external dependencies.
 
 ## Features
-* `json.encode` / `json.decode` support
-* Real JSON `null` via `json.null`
+* `ujson.encode` / `ujson.decode` support
+* Real JSON `null` via `ujson.null`
 * Proper string escaping
 * Full JSON object & array support
 * Detects:
@@ -15,40 +15,40 @@ A lightweight JSON encode/decode library written in Luau, compatible with Lune r
 ## Installation
 Using [Pesde](https://pesde.dev) or simply copying the lib.
 ```lua
-local json = require(path.to.lib)
+local ujson = require(path.to.lib)
 ```
 
 If you use Pesde:
 ```bash
-pesde add onefiverdev/json
+pesde add onefiverdev/ujson
 pesde install # remember to install dependencies
 ```
 
 ## Usage
 ### Encode
 ```lua
-local json = require("path.to.lib")
+local ujson = require("path.to.lib")
 
 local data = {
     hello = "world",
     num = 123,
     nested = {
         ok = true,
-        value = json.null
+        value = ujson.null
     }
 }
 
-print(json.encode(data))
+print(ujson.encode(data))
 ```
 
 **Output:**
-```json
+```ujson
 {"hello":"world","num":123,"nested":{"ok":true,"value":null}}
 ```
 
 ### Decode
 ```lua
-local json = require("path.to.lib")
+local ujson = require("path.to.lib")
 
 local str = [[
     {
@@ -57,7 +57,7 @@ local str = [[
     }
 ]]
 
-local data = json.decode(str)
+local data = ujson.decode(str)
 
 print(data.hello) -- world
 print(data.num)   -- 123
@@ -66,17 +66,17 @@ print(data.num)   -- 123
 ## JSON Null
 Lua has no native `null`, so this library uses:
 ```lua
-json.null
+ujson.null
 ```
 
 **Example:**
 ```lua
 local t = {
-    value = json.null
+    value = ujson.null
 }
 ```
 This will serialize as:
-```json
+```ujson
 {"value":null}
 ```
 
@@ -104,34 +104,34 @@ The library throws errors for:
 
 
 ## 🧠 API
-### `json.encode(value) -> string`
+### `ujson.encode(value) -> string`
 Encodes a Lua table into a JSON string.
 
 ---
 
-### `json.decode(string) -> any`
+### `ujson.decode(string) -> any`
 Parses a JSON string into a Lua table.
 
 ---
 
-### `json.null`
+### `ujson.null`
 Represents JSON `null`.
 ```lua
-local x = json.null
+local x = ujson.null
 ```
 
 ## Full Example
 
 ```lua
-local json = require("json")
+local ujson = require("path.to.lib")
 
-local encoded = json.encode({
+local encoded = ujson.encode({
     name = "Luau",
     features = { "fast", "lightweight" },
-    nilValue = json.null
+    nilValue = ujson.null
 })
 
-local decoded = json.decode(encoded)
+local decoded = ujson.decode(encoded)
 
 print(encoded)
 print(decoded.features[1])
