@@ -1,0 +1,17 @@
+name = "onefiverdev/json"
+version = "1.0.0"
+description = "JSON encoder and decoder"
+authors = ["onefiverdev"]
+license = "Apache-2.0"
+includes = [
+    "README.md",
+    "LICENSE",
+    "pesde.toml"
+]
+
+[target]
+environment = "luau"
+lib = "lib.luau"
+
+[indices]
+default = "https://github.com/pesde-pkg/index"
